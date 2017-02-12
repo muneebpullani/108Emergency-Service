@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <meta http-equiv="Content-Security-Policy" 
+          content="default-src *; 
+                   style-src 'self' 'unsafe-inline' 'unsafe-eval'; 
+                   script-src 'self' 'unsafe-inline' 'unsafe-eval';">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no"> -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/materialize.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+    </head>
+    <body class="regBody">
+        <div id="loader">
+            <div class="valign-wrapper loaderImgWrapper">
+                <img src="img/loader.gif" class="loaderImg">
+            </div>
+        </div>
+        <div id="logIn">
+            <form class="container">
+                <h4 class="headingLogin">108 EMERGENCY SERVICE</h4>
+                <p id="invalidCred">Invalid credentials</p>
+                <p id="noConn">Check your mobile network</p>
+                <div class="row valign-wrapper bottomTen loginPageFormWrap z-depth-1">
+                    <input type="text" id="mail" class="formInput loginPageForm" placeholder="Username">
+                </div>
+                <div class="row valign-wrapper bottomTen loginPageFormWrap z-depth-1">
+                    <input type="password" id="pass" class="formInput loginPageForm" placeholder="Password">
+                </div>
+                <div class="row signInUpButton z-depth-1">
+                    <a class="waves-effect waves-light btn col s12 subBut" id="signin">Sign In</a>
+                </div>
+                <a id="forgotPass">Forgot password</a>
+            </form>
+            <a id="SignUpPage">Create an Account</a>
+        </div>
+        <div id="signUp" class="" style="display: none;">
+            <h4 class="headingLogin">108 EMERGENCY SERVICE</h4>
+            <div class="barScanResult-Wrapper container z-depth-1">
+                <div class="scanRes">
+                    <div class="row scanResData">
+                        <span class="col s4 scanResHead">Adhaar No.: </span>
+                        <span class="col s8 scanResCont" id="scanAdhaarNum"></span>
+                    </div>
+                    <div class="row scanResData">
+                        <span class="col s4 scanResHead">Name: </span>
+                        <span class="col s8 scanResCont" id="scanName"></span>
+                    </div>
+                    <div class="row scanResData">
+                         <span class="col s4 scanResHead">Gender: </span>
+                         <span class="col s8 scanResCont" id="scanGender"></span>
+                    </div>
+                    <div class="row scanResData">
+                        <span class="col s4 scanResHead">DOB: </span>
+                        <span class="col s8 scanResCont" id="scanDOB"></span>
+                    </div>
+                    <div class="row scanResData">
+                        <span class="col s4 scanResHead">House: </span>
+                        <span class="col s8 scanResCont" id="scanHouse"></span>
+                    </div>
+                    <div class="row scanResData">
+                        <span class="col s4 scanResHead">Place: </span>
+                        <span class="col s8 scanResCont" id="scanPlace"></span>
+                    </div>
+                    <div class="row scanResData">
+                        <span class="col s4 scanResHead">PO: </span>
+                        <span class="col s8 scanResCont" id="scanPO"></span>
+                    </div>
+                    <div class="row scanResData">
+                        <span class="col s4 scanResHead">District: </span>
+                        <span class="col s8 scanResCont" id="scanDist"></span>
+                    </div>
+                    <div class="row scanResData">
+                        <span class="col s4 scanResHead">State: </span>
+                        <span class="col s8 scanResCont" id="scanState"></span>
+                    </div>
+                    <div class="row scanResData">
+                        <span class="col s4 scanResHead">PIN: </span>
+                        <span class="col s8 scanResCont" id="scanPin"></span>
+                    </div>
+                </div>
+                <div class="row confirmButton z-depth-1">
+                    <a class="waves-effect waves-light btn col s12 confirmBut" id="confirm">Confirm</a>
+                </div>
+                <div class="row cancelButton z-depth-1">
+                    <a class="waves-effect waves-light btn col s12 cancelBut" id="cancelBut">Cancel</a>
+                </div>
+            </div>
+            <div class="furtherReg-Wrapper container" style="display: none;">
+                <div class="profilePic z-depth-1">
+                    <img src="img/default.png" width="100%" id="pictureProf">
+                    <div class="ppChangeBut row">
+                        <a class="waves-effect waves-dark btn col s12 ppChange" id="ppChange">Change</a>
+                    </div>
+                </div>
+                <form class="furtherFormInputs">
+                    <p id="userNameTake">Username already exist</p>
+                    <p id="passwordMissmatch">Password Missmatch</p>
+                    <p id="passwordMinReq">Password Strength is 6-13 characters</p>
+                    <div class="row valign-wrapper bottomTen loginPageFormWrap z-depth-1">
+                        <input type="text" class="formInput loginPageForm" placeholder="Username">
+                    </div>
+                    <div class="row valign-wrapper bottomTen loginPageFormWrap z-depth-1">
+                        <input type="text" class="formInput loginPageForm" placeholder="Password">
+                    </div>
+                    <div class="row valign-wrapper bottomTen loginPageFormWrap z-depth-1">
+                        <input type="password" class="formInput loginPageForm" placeholder="Confirm Password">
+                    </div>
+                </form>
+                <div class="row confirmButton z-depth-1">
+                    <a class="waves-effect waves-light btn col s12 subBut" id="subBut2">Submit</a>
+                </div>
+                <div class="row cancelButton z-depth-1">
+                    <a class="waves-effect waves-light btn col s12 cancelBut" id="backButReg">Back</a>
+                </div>
+            </div>
+            <span id="SignPageText">Already have an account, Sign In</span>
+        </div>
+        <div id="forgotPassPage" class="valign-wrapper" style="display: none;">
+            <div class="furtherReg-Wrapper container">
+                <form class="furtherFormInputs">
+                    <p id="passwordMissmatch">Password Missmatch</p>
+                    <p id="passwordMinReq">Password Strength is 6-13 characters</p>
+                    <div class="row valign-wrapper bottomTen loginPageFormWrap z-depth-1">
+                        <input type="text" class="formInput loginPageForm" placeholder="Password">
+                    </div>
+                    <div class="row valign-wrapper bottomTen loginPageFormWrap z-depth-1">
+                        <input type="password" class="formInput loginPageForm" placeholder="Confirm Password">
+                    </div>
+                </form>
+                <div class="row confirmButton z-depth-1">
+                    <a class="waves-effect waves-light btn col s12 subBut" id="subBut3">Submit</a>
+                </div>
+                <div class="row cancelButton z-depth-1">
+                    <a class="waves-effect waves-light btn col s12 cancelBut" id="cancelButForgt">Cancel</a>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/materialize.js"></script>
+        <script type="text/javascript" src="js/javascript.js"></script>
+
+        
+    </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no"> -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/materialize.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+    </head>
+    <body>
+        <header class="z-depth-3" style="height:40px;">
+            <div class="mainHeader row profPage">
+                <div class="col s2 backBut waves-effect profPage" id="backButProfs" style="height:40px;">
+                    <span class="fa fa-chevron-left profPage"></span>
+                </div>
+                <div class="col s10 appHead profPage">
+                    <span>Profile</span>
+                </div>
+            </div>
+        </header>
+        <div>
+            <div class="profilePic z-depth-1 profPage">
+                <img src="img/default.png" width="100%" id="pictureProf">
+                <div class="ppChangeBut row">
+                    <a class="waves-effect waves-dark btn col s12 ppChange" id="ppChange">Change</a>
+                </div>
+            </div>
+            <div class="scanRes">
+                <div class="row scanResData">
+                    <span class="col s4 scanResHead">Adhaar No.: </span>
+                    <span class="col s8 scanResCont" id="scanAdhaarNum">480856484521</span>
+                </div>
+                <div class="row scanResData">
+                    <span class="col s4 scanResHead">Name: </span>
+                    <span class="col s8 scanResCont" id="scanName">Mohammed Shakir</span>
+                </div>
+                <div class="row scanResData">
+                     <span class="col s4 scanResHead">Gender: </span>
+                     <span class="col s8 scanResCont" id="scanGender">Male</span>
+                </div>
+                <div class="row scanResData">
+                    <span class="col s4 scanResHead">DOB: </span>
+                    <span class="col s8 scanResCont" id="scanDOB">1995</span>
+                </div>
+                <div class="row scanResData">
+                    <span class="col s4 scanResHead">House: </span>
+                    <span class="col s8 scanResCont" id="scanHouse">Manam Kundil</span>
+                </div>
+                <div class="row scanResData">
+                    <span class="col s4 scanResHead">Place: </span>
+                    <span class="col s8 scanResCont" id="scanPlace">Vettichira</span>
+                </div>
+                <div class="row scanResData">
+                    <span class="col s4 scanResHead">PO: </span>
+                    <span class="col s8 scanResCont" id="scanPO">Kadampuzha</span>
+                </div>
+                <div class="row scanResData">
+                    <span class="col s4 scanResHead">District: </span>
+                    <span class="col s8 scanResCont" id="scanDist">Malappuram</span>
+                </div>
+                <div class="row scanResData">
+                    <span class="col s4 scanResHead">State: </span>
+                    <span class="col s8 scanResCont" id="scanState">Kerala</span>
+                </div>
+                <div class="row scanResData">
+                    <span class="col s4 scanResHead">PIN: </span>
+                    <span class="col s8 scanResCont" id="scanPin">676553</span>
+                </div>
+                <div class="row scanResData">
+                    <span class="col s4 scanResHead">Email: </span>
+                    <span class="col s7 scanResCont" id="scanPin">shakirmkmohammed@gmail.com</span>
+                    <span class="col s1 changeBut" id="changeMail"></span>
+                </div>
+                <div class="row scanResData">
+                    <span class="col s4 scanResHead">Mobile: </span>
+                    <span class="col s7 scanResCont" id="scanPin">676553</span>
+                    <span class="col s1 changeBut" id="changeMob"></span>
+                </div>
+                <div class="row scanResData">
+                    <span class="col s12 scanResHead">Change Password </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            $('#backButProfs').click(function() {
+                var pageId = window.localStorage.getItem('profCaller');
+                if(pageId == '1') {
+                    window.location.href = "index2.html";
+                } else if(pageId == '2') {
+                    window.location.href = "caseReg.html";
+                } else if(pageId == '3') {
+                    window.location.href = "caseSearch.html";
+                } else if(pageId == '4') {
+                    window.location.href = "maps.html";
+                }
+            });
+            document.addEventListener("backbutton", onBackKeyDown, true);
+
+            function onBackKeyDown() {
+                var pageId = window.localStorage.getItem('profCaller');
+                if(pageId == '1') {
+                    window.location.href = "index2.html";
+                } else if(pageId == '2') {
+                    window.location.href = "caseReg.html";
+                } else if(pageId == '3') {
+                    window.location.href = "caseSearch.html";
+                } else if(pageId == '4') {
+                    window.location.href = "maps.html";
+                }
+            }
+        </script>
+        <script type="text/javascript" src="js/materialize.js"></script>
+    </body>
+</html>
